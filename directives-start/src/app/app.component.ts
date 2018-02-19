@@ -9,4 +9,5 @@ export class AppComponent {
   numbers = [1, 2, 3, 4, 5];
   odds = [1, 3, 5];
   onlyOdd = false;
+  value = 10;
 }
