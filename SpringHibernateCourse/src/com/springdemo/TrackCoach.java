@@ -20,4 +20,11 @@ public class TrackCoach implements Coach {
 		return fortuneService.getFortune();
 	}
 
+	public void startupMethod() {
+		System.out.println("INIT METHOD");
+	}
+	
+	public void destroyMethod() {
+		System.out.println("DESTROY METHOD");
+	}
 }
