@@ -40,6 +40,14 @@ public class Customer {
 		this.firstName = firstName;
 	}
 
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
 	public String getEmail() {
 		return email;
 	}

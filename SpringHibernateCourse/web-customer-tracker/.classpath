@@ -38,7 +38,10 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-webflux-5.0.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-webmvc-5.0.4.RELEASE.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/spring-websocket-5.0.4.RELEASE.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/c3p0-0.9.5.2.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hibernate-c3p0-5.2.16.Final.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mchange-commons-java-0.2.11.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5">
 		<attributes>
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
@@ -48,8 +51,5 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/c3p0-0.9.5.2.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/hibernate-c3p0-5.2.16.Final.jar"/>
-	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mchange-commons-java-0.2.11.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
