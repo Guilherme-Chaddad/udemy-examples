@@ -3,8 +3,52 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:padding="8dp"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".CreateHabitActivity">
+
+        <EditText
+                android:id="@+id/et_title"
+                android:hint="Eat an apple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <EditText
+                android:id="@+id/et_descr"
+                android:inputType="textMultiLine"
+                android:lines="2"
+                android:hint="An apple a day keeps the doctor away"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <Button
+                android:id="@+id/btn_choose_image"
+                android:text="Choose Image..."
+                android:onClick="chooseImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <ImageView
+                android:id="@+id/iv_image"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:contentDescription="Selected Image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <Button
+                android:id="@+id/btn_save"
+                android:text="Save habit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <TextView
+                android:id="@+id/tv_error"
+                android:visibility="invisible"
+                android:textColor="#E53935"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 </android.support.constraint.ConstraintLayout>
