@@ -19,7 +19,7 @@ class HabitsAdapter(val habits: List<Habit>) : RecyclerView.Adapter<HabitsAdapte
     override fun onBindViewHolder(holder: HabitViewHolder, index: Int) {
         holder.card.tv_title.text = habits[index].title
         holder.card.tv_description.text = habits[index].description
-        holder.card.iv_icon.setImageResource(habits[index].image)
+        holder.card.iv_icon.setImageBitmap(habits[index].image)
     }
 
     override fun getItemCount() = habits.size

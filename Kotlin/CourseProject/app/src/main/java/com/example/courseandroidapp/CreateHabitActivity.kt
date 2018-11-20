@@ -1,5 +1,6 @@
 package com.example.courseandroidapp
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -9,6 +10,7 @@ import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import com.example.courseandroidapp.db.HabitDbTable
 import kotlinx.android.synthetic.main.activity_create_habit.*
 import java.io.IOException
 
@@ -33,8 +35,20 @@ class CreateHabitActivity : AppCompatActivity() {
             displayErrorMessage("Add a motivating picture to your habit")
             return
         }
-        tv_error.visibility = View.INVISIBLE
+        //tv_error.visibility = View.INVISIBLE
         //Store the habit...
+        val title = et_title.text.toString()
+        val description = et_descr.text.toString()
+        val habit = Habit(title, description, imageBitmap!!)
+
+        val id = HabitDbTable(this).store(habit)
+
+        if(id == -1L){
+            displayErrorMessage("Habit coud not be stored")
+        } else {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun EditText.isBlank() = this.text.toString().isBlank()
@@ -59,7 +73,8 @@ class CreateHabitActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if(requestCode == CHOOSE_IMAGE_REQUEST  && data != null&& data.data != null) {
+        if(requestCode == CHOOSE_IMAGE_REQUEST && resultCode == Activity.RESULT_OK
+                        && data != null&& data.data != null) {
             Log.d(TAG, "An image was chosen")
 
             val bitmap = tryReadBitmap(data.data)
@@ -73,7 +88,7 @@ class CreateHabitActivity : AppCompatActivity() {
     }
 
     private fun tryReadBitmap(data: Uri): Bitmap? {
-        try {
+        return try {
             MediaStore.Images.Media.getBitmap(contentResolver, data)
         } catch(e: IOException) {
             e.printStackTrace()
